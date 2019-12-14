@@ -12,4 +12,8 @@ func main() {
 	n.UseHandler(router)
 	log.Println("Listening:")
 	n.Run(":3001")
+	//var x model.Game
+	//x.Name = "test"
+	//x.Genre = "test"
+	//store.SaveGame(&x)
 }

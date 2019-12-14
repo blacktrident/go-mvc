@@ -12,6 +12,7 @@ require (
 	github.com/stretchr/testify v1.4.0 // indirect
 	github.com/tidwall/pretty v1.0.0 // indirect
 	github.com/urfave/negroni v1.0.0
-	go.mongodb.org/mongo-driver v1.2.0 // indirect
+	go.mongodb.org/mongo-driver v1.2.0
+	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 
 )

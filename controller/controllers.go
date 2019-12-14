@@ -2,11 +2,12 @@ package controller
 
 import (
 	"github.com/blacktrident/go-mvc/model"
+	"github.com/blacktrident/go-mvc/store"
+	"github.com/blacktrident/go-mvc/url"
 	"github.com/gorilla/schema"
 	"html/template"
 	"log"
 	"net/http"
-	"time"
 )
 
 func HomeController(res http.ResponseWriter, req *http.Request) {
@@ -19,12 +20,14 @@ func HomeController(res http.ResponseWriter, req *http.Request) {
 	t.Execute(res, data)
 }
 
-func AddPostController(res http.ResponseWriter, req *http.Request) {
-	data := make(map[string]interface{})
-	controllerTemplate := templates.POST_ADD
-	url_patterns := urls.ReturnURLS()
+func AddController(res http.ResponseWriter, req *http.Request) {
+	//data := make(map[string]interface{})
+	//controllerTemplate := templates.POST_ADD
+	urls := url.GetURLS()
 	if req.Method == "GET" {
-		//utils.CustomTemplateExecute(res, req, controllerTemplate, data)
+		//t, _ := template.ParseFiles("template/add.html")
+		//res.
+		//return add.html
 	}
 	if req.Method == "POST" {
 		err := req.ParseForm()
@@ -33,9 +36,10 @@ func AddPostController(res http.ResponseWriter, req *http.Request) {
 		err = decoder.Decode(game, req.Form)
 		log.Println(err)
 		if err != nil {
-			utils.CustomTemplateExecute(res, req, controllerTemplate, data)
+			//utils.CustomTemplateExecute(res, req, controllerTemplate, data)
 		} else {
-			http.Redirect(res, req, url_patterns.POSTS_PATH, http.StatusSeeOther)
+			err = store.SaveGame(game)
+			http.Redirect(res, req, urls.ADD_PATH, http.StatusSeeOther)
 		}
 	}
 }

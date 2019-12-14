@@ -12,5 +12,5 @@ type Game struct {
 	ReleaseDate string        `bson:"dateTime"`
 	NoOfPlayers int32         `bson:"noOfPlayers"`
 	Publisher   string        `bson:"publisher"`
-	//BoxArt
+	BoxArt      string        `bson:"BoxArt"`
 }

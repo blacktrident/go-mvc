@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+</head>
+<body>
+<h1>List Of All Games Currently Owned</h1>
+{{ range .Games }}
+    <div class="col s12 card">
+        FFF
+        <h5>Name : {{.Name}}</h5>
+        <br>
+        <h5>Platform : {{.Platform}}</h5>
+        <br>
+        <h5>Genre : {{.Genre}}</h5>
+        <br>
+        <h5>ReleaseDate : {{.ReleaseDate}}</h5>
+        <br>
+        <h5>NoofPlayers : {{.NoOfPlayers}}</h5>
+        <br>
+        <h5>Publisher : {{.Publisher}}</h5>
+        <br>
+        <img src="{{.BoxArt}}">
+    </div>
+{{ end }}
+
+
+</body>
+</html>

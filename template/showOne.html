@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Show One</title>
-    <link rel="icon" href="src/img/favicon.png">
+    <title>Add Game</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="src/css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -21,67 +20,38 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<div class="row align-items-center">
-    <div class="col-lg-1">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            {{/*            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>*/}}
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+{{/*<form  action="/show" method="post" class="form-group">*/}}
+{{/*    <div class="col-lg-2 col-sm-6">*/}}
+{{/*    Name: <br>*/}}
+{{/*    <input type="text" name="Name" placeholder="Search Game">*/}}
+{{/*    </div>*/}}
+{{/*    <br>*/}}
+{{/*    <input type="submit" class="btn_1" value="Submit">*/}}
+{{/*</form>*/}}
 
-            <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/"><h4>Home</h4></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/add"><h4>Add</h4></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/showAll"> <h4>Show All</h4></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/show"><h4>Show One</h4></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</div>
+{{/*<img src ="/src/images/image001.png">*/}}
 
-
-<form  action="/show" method="post" class="form-group">
-    <div class="col-lg-2 col-sm-6">
-    Name: <br>
-    <input type="text" name="Name" placeholder="Search Game">
-    </div>
-    <br>
-    <input type="submit" class="btn_1" value="Submit">
-</form>
-
-<img src ="/src/images/image001.png">
-
-<div class="col-lg-2 col-sm-6">
-    <div class="single_post post_1">
-        <div class="single_post_img">
-            <img src="{{.Game.BoxArt}}" alt="">
-        </div>
-        <div class="single_post_text text-center">
-            <h5>Name : {{.Game.Name}}</h5>
-            <br>
-            <h5>Platform : {{.Game.Platform}}</h5>
-            <br>
-            <h5>Genre : {{.Game.Genre}}</h5>
-            <br>
-            <h5>Release Date : {{.Game.ReleaseDate}}</h5>
-            <br>
-            <h5>No of Players : {{.Game.NoOfPlayers}}</h5>
-            <br>
-            <h5>Publisher : {{.Game.Publisher}}</h5>
-            <br>
-        </div>
-    </div>
-</div>
+{{/*<div class="col-lg-2 col-sm-6">*/}}
+{{/*    <div class="single_post post_1">*/}}
+{{/*        <div class="single_post_img">*/}}
+{{/*            <img src="{{.Game.BoxArt}}" alt="">*/}}
+{{/*        </div>*/}}
+{{/*        <div class="single_post_text text-center">*/}}
+{{/*            <h5>Name : {{.Game.Name}}</h5>*/}}
+{{/*            <br>*/}}
+{{/*            <h5>Platform : {{.Game.Platform}}</h5>*/}}
+{{/*            <br>*/}}
+{{/*            <h5>Genre : {{.Game.Genre}}</h5>*/}}
+{{/*            <br>*/}}
+{{/*            <h5>Release Date : {{.Game.ReleaseDate}}</h5>*/}}
+{{/*            <br>*/}}
+{{/*            <h5>No of Players : {{.Game.NoOfPlayers}}</h5>*/}}
+{{/*            <br>*/}}
+{{/*            <h5>Publisher : {{.Game.Publisher}}</h5>*/}}
+{{/*            <br>*/}}
+{{/*        </div>*/}}
+{{/*    </div>*/}}
+{{/*</div>*/}}
 
 
 </body>

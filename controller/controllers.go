@@ -69,7 +69,7 @@ func ShowController(res http.ResponseWriter, req *http.Request) {
 		t, _ := template.ParseFiles("template/showOne.html")
 		t.Execute(res, data)
 	} else {
-		log.Print("HereGet")
+		//log.Print("HereGet")
 		data := struct {
 			Title string
 		}{
@@ -81,6 +81,7 @@ func ShowController(res http.ResponseWriter, req *http.Request) {
 }
 
 func ShowAllController(res http.ResponseWriter, req *http.Request) {
+	log.Print("Here")
 	data := struct {
 		Title string
 		Games []model.Game

@@ -11,13 +11,5 @@ func main() {
 	n := negroni.Classic()
 	n.UseHandler(router)
 	log.Println("Listening:")
-	n.Run(":3001")
-	//var x model.Game
-	//x.Name = "test"
-	//x.Genre = "test"
-	//store.SaveGame(&x)
-	//var x []string
-	//x = append(x, "efwf")
-	//z, _ := store.GetOne("efwf")
-	//log.Print(z)
+	n.Run(":3000")
 }

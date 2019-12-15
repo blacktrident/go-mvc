@@ -18,11 +18,29 @@ func GetSession(collection string, pk string) *mgo.Session {
 		panic(err)
 	}
 	session.SetMode(mgo.Monotonic, true)
+	ensureIndex(collection, pk, session)
 	return session
 }
 
+func ensureIndex(collection string, pk string, s *mgo.Session) {
+	session := s.Copy()
+	defer session.Close()
+	c := session.DB("playstation").C(collection)
+	index := mgo.Index{
+		Key:        []string{pk},
+		Unique:     true,
+		DropDups:   true,
+		Background: true,
+		Sparse:     true,
+	}
+	err := c.EnsureIndex(index)
+	if err != nil {
+		panic(err)
+	}
+}
+
 func Save(game *model.Game) error {
-	session := GetSession("Game", "ID")
+	session := GetSession("Game", "name")
 	session = session.Copy()
 	defer session.Close()
 	c := session.DB("playstation").C("Game")
@@ -32,11 +50,22 @@ func Save(game *model.Game) error {
 }
 
 func GetAll() ([]model.Game, error) {
-	session := GetSession("Game", "ID")
+	session := GetSession("Game", "name")
 	session = session.Copy()
 	defer session.Close()
 	c := session.DB("playstation").C("Game")
 	var games []model.Game
 	err := c.Find(bson.M{}).All(&games)
 	return games, err
+}
+
+func GetOne(Name string) (*model.Game, error) {
+	session := GetSession("Game", "name")
+	session = session.Copy()
+	defer session.Close()
+	c := session.DB("playstation").C("Game")
+	var game model.Game
+	var err error
+	err = c.Find(bson.M{"name": Name}).One(&game)
+	return &game, err
 }

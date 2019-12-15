@@ -16,4 +16,8 @@ func main() {
 	//x.Name = "test"
 	//x.Genre = "test"
 	//store.SaveGame(&x)
+	//var x []string
+	//x = append(x, "efwf")
+	//z, _ := store.GetOne("efwf")
+	//log.Print(z)
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowOne</title>
+</head>
+<body>
+<form  action="/show" method="post">
+    Name: <br>
+    <input type="text" name="Name" >
+    <br>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<div class="col s12 card">
+        <h5>Name : {{.Game.Name}}</h5>
+        <br>
+        <h5>Platform : {{.Game.Platform}}</h5>
+        <br>
+        <h5>Genre : {{.Game.Genre}}</h5>
+        <br>
+        <h5>ReleaseDate : {{.Game.ReleaseDate}}</h5>
+        <br>
+        <h5>NoofPlayers : {{.Game.NoOfPlayers}}</h5>
+        <br>
+        <h5>Publisher : {{.Game.Publisher}}</h5>
+        <br>
+        <img src="{{.Game.BoxArt}}">
+</div>
+
+
+</body>
+</html>
